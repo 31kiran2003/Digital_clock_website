@@ -1,0 +1,82 @@
+
+
+main {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+
+html, body {
+  overflow: hidden;
+}
+
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 600px;
+}
+
+#time {
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+
+  /* Responsive font size: minimum 2rem, preferred 8vw, max 6rem */
+  font-size: clamp(2rem, 8vw, 6rem);
+}
+
+
+.controls {
+  display: flex;             /* makes children appear in a row */
+  justify-content: center;   /* center horizontally */
+  align-items: center;
+  gap: 15px;                 /* space between buttons */
+  margin-bottom: 20px;
+}
+
+
+button {
+  /* Responsive size: min 40px, preferred 12vw, max 80px */
+  width: clamp(40px, 12vw, 80px);
+  height: clamp(40px, 12vw, 80px);
+  border-radius: 50%;
+  font-size: clamp(0.6rem, 2.5vw, 1rem);
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  margin: 0; /* gap handles spacing */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+
+
+
+#start { background: #28a745; }
+#split { background: #6c757d; }
+#reset { background: #007bff; }
+
+
+#splits {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#splits li {
+  padding: 5px;
+  font-size: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+

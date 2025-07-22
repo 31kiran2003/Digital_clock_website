@@ -1,0 +1,339 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: #365c77; 
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: inherit;
+  z-index: 2;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Sidebar styles on left */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -80px; 
+  width: 80px;
+  height: 100%;
+  background-color: #2d4b62;
+  transition: left 0.3s ease;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar ul li {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+.sidebar ul li i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.sidebar ul li span {
+  font-size: 10px;
+}
+
+
+
+.container {
+  background-color: #2c4d63;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+
+.circle-ring {
+  position: relative;
+  width: 100%;
+  max-width: 220px;
+  margin: 0 auto 20px;
+}
+
+.circle-ring svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-inside-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.text-inside-ring .label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #bcd1e6;
+}
+
+.counter {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.alarm-time {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ffcc00;
+}
+
+
+/* Horizontal and Centered */
+.button-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* wraps on small screens */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Common styles */
+.button-row input[type="time"],
+.button-row button {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: none;
+  min-width: 90px;
+  flex: 0 1 auto;
+  box-sizing: border-box;
+}
+
+#startBtn,
+#stopBtn {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.3s ease;
+}
+
+#startBtn {
+  background-color: #00cfff;
+  color: white;
+}
+
+#startBtn:hover {
+  background-color: #009fc3;
+}
+
+#stopBtn {
+  background-color: #ff5e5e;
+  color: white;
+}
+
+#stopBtn:hover {
+  background-color: #e04a4a;
+}
+
+/* Tablet devices */
+@media (max-width: 768px) {
+  #startBtn,
+  #stopBtn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  #startBtn,
+  #stopBtn {
+    padding: 8px 16px;
+    font-size: 14px;
+  
+    box-sizing: border-box;
+  }
+}
+
+
+/* Ringtone selector styling */
+.ringtone-selector {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.ringtone-selector select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+
+.center-horizontal {
+  display: flex;               /* make children display in a row */
+  justify-content: center;     /* center horizontally */
+  align-items: center;         /* center vertically (if height applies) */
+  flex-wrap: wrap;             /* allow wrap on small screens */
+  gap: 10px;                   /* spacing between items */
+  margin: 20px auto;           /* center div in its parent */
+}
+
+
+.circle-ring {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 20px auto;
+}
+
+.circle-ring svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.ring-bg {
+  stroke: #e0e0e0;
+}
+
+.ring-fg {
+  stroke: #00cfff;
+  stroke-dasharray: 565.48;  /* 2 * π * 90 */
+  stroke-dashoffset: 565.48;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+.text-inside-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+}
+
+input[type="time"] {
+  font-family: monospace;
+  padding-inline-start: 1px;
+  cursor: default;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+
+  box-sizing: border-box;
+}
+
+/* Tablet Devices */
+@media (max-width: 768px) {
+  input[type="time"] {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 480px) {
+  input[type="time"] {
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+}
+
+/* General Snooze Button Styles */
+#snoozeControls button {
+  background-color: #00cfff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 5px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+#snoozeControls button:hover {
+  background-color: #00b0da;
+}
+
+/* Responsive layout: keep them in a row and center aligned */
+#snoozeControls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap buttons if screen is too narrow */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  #snoozeControls button {
+    padding: 9px 14px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+  #snoozeControls {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #snoozeControls button {
+    width: 100%;
+    max-width: 200px;
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}

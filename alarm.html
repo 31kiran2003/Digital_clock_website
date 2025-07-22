@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alarm</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="dark_mode.css" />
+    <link rel="stylesheet" href="alarm.css" />
+  </head>
+  <body>
+    <header>
+      <div class="icons">
+        <span class="menu-toggle">☰</span>
+        <!-- We'll use this icon to toggle theme -->
+        <span id="theme-toggle"><i class="fas fa-adjust"></i></span>
+        <span id="fullscreenToggle" title="Toggle Full Screen"
+          ><i class="fas fa-expand"></i>
+        </span>
+         <span>
+          <!-- Calendar Button -->
+          <i
+            id="clockCalendarBtn"
+            class="fas fa-calendar-alt"
+            style="padding: 5px"
+          ></i>
+
+          <!-- Calendar Popup -->
+          <div id="clockCalendarModal" class="clock-calendar-modal">
+            <div class="clock-calendar-content">
+              <span class="clock-calendar-close">&times;</span>
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=en.indian%23holiday%40group.v.calendar.google.com&ctz=Asia%2FKolkata"
+                style="border: 0"
+                width="100%"
+                height="500"
+                frameborder="0"
+                scrolling="no"
+              ></iframe>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div class="title">Alarm Online</div>
+    </header>
+
+    <nav class="sidebar" id="sidebar">
+      <ul>
+        <li>
+          <a href="alarm.html">
+            <i class="fas fa-bell"></i>
+            <span>Alarm</span>
+          </a>
+        </li>
+        <li>
+          <a href="Clock.html">
+            <i class="fas fa-clock"></i>
+            <span>Clock</span>
+          </a>
+        </li>
+        <li>
+          <a href="stopwatch.html">
+            <i class="fas fa-stopwatch"></i>
+            <span>Stopwatch</span>
+          </a>
+        </li>
+        <li>
+          <a href="Timer.html">
+            <i class="fas fa-hourglass-half"></i>
+            <span>Timer</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="circle-ring">
+        <svg width="220" height="220">
+          <circle
+            class="ring-bg"
+            cx="110"
+            cy="110"
+            r="90"
+            stroke="#ddd"
+            stroke-width="12"
+            fill="none"
+          />
+          <circle
+            class="ring-fg"
+            cx="110"
+            cy="110"
+            r="90"
+            stroke="#00cfff"
+            stroke-width="12"
+            fill="none"
+          />
+        </svg>
+        <div class="text-inside-ring">
+          <div class="label">Time Remaining</div>
+          <div class="counter">00:00</div>
+          <div class="alarm-time">🔔 Alarm at: --:--</div>
+        </div>
+      </div>
+
+      <div class="center-horizontal">
+        <input type="time" id="alarmTimeInput" />
+        <button id="startBtn"><i class="fas fa-play"></i></button>
+        <button id="stopBtn"><i class="fas fa-stop"></i></button>
+      </div>
+
+      <div class="ringtone-selector">
+        <label for="ringtoneSelect">Choose Ringtone:</label>
+        <select id="ringtoneSelect">
+          <option value="alarm_classic.mp3">Classic Bell</option>
+          <option value="alarm_clock.mp3">Beep Alert</option>
+          <option value="alarm_galaxy2013.mp3">Digital Wake</option>
+        </select>
+      </div>
+
+      <!-- 🎵 Custom ringtone -->
+      <audio id="alarmSound">
+        <source id="alarmSource" src="" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+
+      <div
+        id="snoozeControls"
+        style="
+          display: none;
+          justify-content: center;
+          gap: 10px;
+          margin-top: 10px;
+        "
+      >
+        <button onclick="snooze(5)">Snooze 5sec</button>
+        <button onclick="snooze(300)">Snooze 5min</button>
+        <button onclick="snooze(600)">Snooze 10min</button>
+      </div>
+    </main>
+    <script src="menu_toggle.js"></script>
+    <script src="dark_mode.js"></script>
+    <script src="alarm.js"></script>
+  </body>
+</html>

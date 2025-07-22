@@ -1,0 +1,21 @@
+
+
+
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#clock {
+  font-size: 10vw;
+  white-space: nowrap;
+}
+
+#date {
+  margin-top: 10px;
+  font-size: 2vw;
+}
+
