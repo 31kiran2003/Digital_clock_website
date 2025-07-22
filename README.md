@@ -29,7 +29,7 @@ Your **smart, stylish, and responsive** clock with all-in-one time features!<br>
   ```bash<br>
   git clone https://github.com/31kiran2003/Digital_clock_website.git
   ```
-  <br>
+  
 * 📝 Edit as needed<br>
 * ▶️ Open `*.html` in your browser<br>
 
