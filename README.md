@@ -35,7 +35,7 @@ Google Calendar Integration 📆
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/Digital_clock_website.git
+git clone 
 open index.html
 
 
