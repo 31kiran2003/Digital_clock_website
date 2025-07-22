@@ -28,7 +28,7 @@
 
 
 📽️ Preview
-  1.Watch the demo video or try the live version to explore features in action!
+  1.Watch the demo video or try the live version to explore features in action!<br>
   https://github.com/user-attachments/assets/ac2dda27-5e55-4010-b6a3-cf0751b324e6
 
   
