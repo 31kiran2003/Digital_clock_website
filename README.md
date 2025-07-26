@@ -9,7 +9,6 @@ Your **smart, stylish, and responsive** clock with all-in-one time features!<br>
 * 🎵 **Custom Ringtones** – Choose your own alarm sound.<br>
 * 🌗 **Dark Mode** – Toggle between dark 🌙 and light ☀️ themes.<br>
 * 🖥️ **Full-Screen View** – Go distraction-free with one click.<br>
-* 🎨 **Daily Backgrounds** – A fresh new background every day!<br>
 * 📅 **Google Calendar Popup** – Plan your day right from the header.<br>
 * 💡 **Responsive & Interactive UI** – Works great on all devices!<br>
 
